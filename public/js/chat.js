@@ -19,3 +19,28 @@ chat.prototype.cambiarSala = function (sala) {
         nuevaSala: sala
     });
 };
+// Función para procesar los comandos /nick o /join
+chat.prototype.procesarComando = function (comando) {
+    var palabras = comando.split(' ');
+    var comando = palabras[0]
+                    .substring(1, palabras[0].length)
+                    .toLowerCase(); // Split para obtener el comando
+    var mensaje = false;
+    
+    switch (comando){
+        case 'join':
+            palabras.shift();
+            var sala = palabras.join(' ');
+            this.cambiarSala(sala); //Cambiar o crear sala
+            break;
+        case 'nick':
+            palabras.shift();
+            var nombre = palabras.join(' ');
+            this.socket.emit('nuevoNombre', nombre); // Cambio de nombre
+            break;
+        default:
+            mensaje = 'Comando no reconocido';  // En caso de que no se
+            break;                              // reconozca el comando
+    }
+    return mensaje;
+};

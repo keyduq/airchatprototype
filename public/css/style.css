@@ -3,30 +3,16 @@
     Autor     : Keyvin Duque
 */
 
-body{
-    padding:50px;
-    font:14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-    color: #00B7FF;
-}
-
 #content {
+    padding-top: 100px;
     width: 800px;
     margin-left: auto;
     margin-right: auto;
 }
 
-#sala {
-    background: #ddd;
-}
-
-#mensajes {
-    width: 690px;
+.mensajes {
     height: 300px;
     overflow: auto;
-    background-color: #eee;
     margin-bottom: 1em;
     margin-right: 10px;
 }
