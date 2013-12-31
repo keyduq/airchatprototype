@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang='es'>
+
+<head>
+    <title>airChat</title>
+    <link rel='stylesheet' href='/css/style.css' />
+</head>
+
+<body>
+<div id='content'>
+
+    <div id='sala'></div>
+    
+    <div id='sala-lista'></div>
+    
+    <div id='mensajes'></div>
+    
+    <form id='formEnviar'>
+    
+        <input id='txtMensaje' />
+        <input id='enviarMensaje' type='submit' value='enviar!' />
+        
+        <div id='ayuda'>
+            <p>Comandos del chat:</p>
+            <ul>
+                <li>Cambiar nickname: <code>/nick [nickname]</code></li>
+                <li>Entrar/Crear sala: <code>/join [nombre sala]</code></li>
+            </ul>
+        </div>
+    </form>
+</div>
+<script src='/socket.io/socket.io.js' type='text/javascript'></script>
+<script src='http://code.jquery.com/jquery-1.8.0.min.js' type='text/javascript'></script>
+<script src='/js/chat.js' type='text/javascript'></script>
+<script src='/js/chat_ui.js' type='text/javascript'></script>
+</body>
+</html>
