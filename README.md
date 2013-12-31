@@ -3,6 +3,11 @@ airchatprototype
 
 airChat Prototype
 
+Changelog v0.3.1:
+
+    Se arregló un problema responsive entre las resolución 768px a 992px (tablets)
+    Pequeños cambios en la interfaz.
+
 Changelog v0.3.0:
 
     Agregado borde a cada mensaje

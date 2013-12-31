@@ -2,7 +2,7 @@
     Creado el : 30/12/2013, 11:06:05 PM
     Autor     : Keyvin Duque
 */
-@media ( min-width: 768px ) {
+@media ( min-width: 992px ) {
     #content {
         padding: 100px;
         padding-top: 20px;
@@ -28,7 +28,7 @@
     }
 }
 
-@media ( max-width: 768px ) {
+@media ( max-width: 992px ) {
     #content {
         padding: 10px;
         margin-left: auto;
@@ -49,6 +49,13 @@
         padding-left: 10px;
         padding-right: 10px;
         background-color: whitesmoke;
+    }
+}
+
+
+@media ( min-width: 768px ) and ( max-width: 992px ) {
+    #divMensaje {
+        width: 100%;
     }
 }
 

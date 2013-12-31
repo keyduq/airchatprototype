@@ -23,7 +23,7 @@ function procesarIngresoUsuario(chatApp, socket) {
         }        
     } else {
         chatApp.enviarMensaje($("#sala").text(), mensaje);
-        $("#mensajes").append(divEscapedContentElement('Tu: ' + mensaje));
+        $("#mensajes").append(divEscapedContentElement('Tú: ' + mensaje));
         $("#mensajes").scrollTop($("#mensajes").prop("scrollHeight"));
     }
     $("#txtMensaje").val("");
