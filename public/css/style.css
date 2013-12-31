@@ -16,3 +16,7 @@
     margin-bottom: 1em;
     margin-right: 10px;
 }
+
+.click {
+    cursor:pointer;
+}

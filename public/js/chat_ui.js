@@ -7,6 +7,10 @@ function divSystemContentElement(mensaje) {
     return $('<div></div>').html('<i>' + mensaje + '</i>');
 }
 
+function aEscapedContentElement(mensaje) {
+    return $('<a href="javascript:void(0);" class="list-group-item"></a>').text(mensaje);
+}
+
 function procesarIngresoUsuario(chatApp, socket) {
     var mensaje = $("#txtMensaje").val();
     var mensajeSistema;
@@ -39,7 +43,7 @@ $(document).ready(function() {
     });
     
     socket.on('ingresoResultado', function(result) {
-        $('#sala').text(result.room);
+        $('#sala').text(result.sala);
         $('#mensajes').append(divSystemContentElement('Sala cambiada.'));
     });
     
@@ -53,10 +57,13 @@ $(document).ready(function() {
         for(var sala in salas) {
             sala = sala.substring(1, sala.length);
             if (sala !== '') {
-            $('#sala-lista').append(divEscapedContentElement(sala));
+                if (sala === $("#sala").text())
+                    $('#sala-lista').append(aEscapedContentElement(sala).addClass("active"));
+                else
+                    $('#sala-lista').append(aEscapedContentElement(sala));
             }
         }
-        $('#sala-lista div').click(function() {
+        $('#sala-lista a').click(function() {
             chatApp.procesarComando('/join ' + $(this).text());
             $('#txtMensaje').focus();
         });

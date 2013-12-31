@@ -1,6 +1,6 @@
 {
     "name": "airChat",
-    "version": "0.1.0",
+    "version": "0.2.1",
     "description": "Prototipo de airChat",
     "dependencies": {
         "socket.io": "~0.9.6",
