@@ -1,3 +1,12 @@
+
+/* Creado por   :   Keyvin Duque
+ * Equipo       :   airChat Team
+ * Involucrados :   Jonathan Méndez, Alejandro Almarza
+ * Licencia     :   GNU GPL v3
+ * Fecha        :   lun 30 dic 2013 23:43:12 VET 
+ * Descripcion  :   Instanciador del servidor
+ */
+
 var http    = require('http');
 var fs      = require('fs');
 var path    = require('path');
@@ -40,7 +49,7 @@ function serveStatic(response, cache, rutaAbs){
 
 var server = http.createServer(function(request, response) {
     var rutaArchivo = false;
-    if (request.url == '/'){
+    if (request.url === '/'){
         rutaArchivo = 'public/index.html';
     } else {
         rutaArchivo = 'public' + request.url;

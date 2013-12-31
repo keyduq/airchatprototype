@@ -1,6 +1,6 @@
 {
     "name": "airChat",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Chat para los desarrolladores de Vocem",
     "dependencies": {
         "socket.io": "~0.9.6",
