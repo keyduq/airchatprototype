@@ -1,6 +1,6 @@
 
 function divEscapedContentElement(mensaje) {
-    return $('<div></div>').text(mensaje);
+    return $('<div class="list-group-item"></div>').text(mensaje);
 }
 
 function divSystemContentElement(mensaje) {
@@ -8,7 +8,8 @@ function divSystemContentElement(mensaje) {
 }
 
 function aEscapedContentElement(mensaje) {
-    return $('<a href="javascript:void(0);" class="list-group-item"></a>').text(mensaje);
+    return $('<a href="javascript:void(0);" class="list-group-item"></a>').
+            text(mensaje);
 }
 
 function procesarIngresoUsuario(chatApp, socket) {
@@ -22,7 +23,7 @@ function procesarIngresoUsuario(chatApp, socket) {
         }        
     } else {
         chatApp.enviarMensaje($("#sala").text(), mensaje);
-        $("#mensajes").append(divEscapedContentElement(mensaje));
+        $("#mensajes").append(divEscapedContentElement('Tu: ' + mensaje));
         $("#mensajes").scrollTop($("#mensajes").prop("scrollHeight"));
     }
     $("#txtMensaje").val("");
@@ -32,14 +33,14 @@ var socket = io.connect();
 
 $(document).ready(function() {
     var chatApp = new chat(socket);
-    socket.on('resultadoNombre', function(result) {
+    socket.on('nombreResultado', function(result) {
         var mensaje;
         if (result.success) {
-            mensaje = 'Ahora eres ' + result.name + '.';
+            mensaje = 'Ahora eres ' + result.nombre + '.';
         } else {
-            mensaje = result.message;
+            mensaje = result.mensaje;
         }
-        $('#mensajes').append(divSystemContentElement(mensajes));
+        $('#mensajes').append(divSystemContentElement(mensaje));
     });
     
     socket.on('ingresoResultado', function(result) {
@@ -47,9 +48,10 @@ $(document).ready(function() {
         $('#mensajes').append(divSystemContentElement('Sala cambiada.'));
     });
     
-    socket.on('mensaje', function (message) {
-        var newElement = $('<div></div>').text(message.text);
-        $('#mensajes').append(newElement);
+    socket.on('mensaje', function (mensaje) {
+        var nuevoMensaje = $('<div class="list-group-item"></div>').
+                text(mensaje.text);
+        $('#mensajes').append(nuevoMensaje);
     });
     
     socket.on('salas', function(salas) {
@@ -58,7 +60,8 @@ $(document).ready(function() {
             sala = sala.substring(1, sala.length);
             if (sala !== '') {
                 if (sala === $("#sala").text())
-                    $('#sala-lista').append(aEscapedContentElement(sala).addClass("active"));
+                    $('#sala-lista').append(aEscapedContentElement(sala).
+                        addClass("active"));
                 else
                     $('#sala-lista').append(aEscapedContentElement(sala));
             }

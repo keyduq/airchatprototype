@@ -2,16 +2,58 @@
     Creado el : 30/12/2013, 11:06:05 PM
     Autor     : Keyvin Duque
 */
-
-#content {
-    padding-top: 100px;
-    width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+@media ( min-width: 768px ) {
+    #content {
+        padding: 100px;
+        padding-top: 20px;
+        /*width: 800px;*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .airchat {
+        display: inline-flex;
+    }
+    .logo {
+        padding: 10px;
+        height: 80px;
+    }
+    .right {
+        float: right;
+    }
+    #header {
+        box-shadow: 0px 0px 5px #b4c9e3;
+        padding-left: 100px;
+        padding-right: 100px;
+        background-color: whitesmoke;
+    }
 }
 
-.mensajes {
-    height: 300px;
+@media ( max-width: 768px ) {
+    #content {
+        padding: 10px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .airchat {
+        display: inline-flex;
+    }
+    .logo {
+        padding: 5px;
+        height: 50px;
+    }
+    .right {
+        float: right;
+    }
+    #header {
+        box-shadow: 0px 0px 5px #b4c9e3;
+        padding-left: 10px;
+        padding-right: 10px;
+        background-color: whitesmoke;
+    }
+}
+
+#mensajes {
+    height: 500px;
     overflow: auto;
     margin-bottom: 1em;
     margin-right: 10px;
