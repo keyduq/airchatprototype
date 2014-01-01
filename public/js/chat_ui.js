@@ -71,9 +71,9 @@ $(document).ready(function() {
             $('#txtMensaje').focus();
         });
     });
-    setInterval(function() {
+    /*setInterval(function() {
         socket.emit('salas');
-    }, 1000);
+    }, 1000);*/
     $('#txtMensaje').focus();
     $('#formEnviar').submit(function() {
         procesarIngresoUsuario(chatApp, socket);

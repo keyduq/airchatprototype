@@ -26,6 +26,10 @@
         padding-right: 100px;
         background-color: whitesmoke;
     }
+    #sala-lista {
+        height: 500px;
+        overflow: auto;
+    }
 }
 
 @media ( max-width: 992px ) {
@@ -50,12 +54,18 @@
         padding-right: 10px;
         background-color: whitesmoke;
     }
+    #sala-lista {
+        height: auto;
+    }
 }
 
 
 @media ( min-width: 768px ) and ( max-width: 992px ) {
     #divMensaje {
         width: 100%;
+    }
+    #sala-lista {
+        height: auto;
     }
 }
 
@@ -69,3 +79,4 @@
 .click {
     cursor:pointer;
 }
+
